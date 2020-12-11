@@ -15,8 +15,13 @@ return function (App $app)
     {
         $apiGroup->group('/client', function(Group $clientGroup) 
         {
-            $clientGroup->post('/login', "App\Controllers\ClientController:login");
-            $clientGroup->post('/register', "App\Controllers\ClientController:register");
+            $clientGroup->post('/login', "App\Controllers\AccountController:login");
+            $clientGroup->post('/register', "App\Controllers\AccountController:register");
+        });
+        $apiGroup->group('/product', function(Group $productGroup)
+        {
+            $productGroup->post('/all', "App\Controllers\ProductController:retrieve_all");
+            $productGroup->post('/id', "App\Controllers\ProductController:retrieve_by_id");
         });
     });
 };

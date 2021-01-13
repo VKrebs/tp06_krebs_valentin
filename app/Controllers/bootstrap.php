@@ -2,7 +2,7 @@
 use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
 date_default_timezone_set('America/Lima');
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 $isDevMode = true;
 $config = Setup::createYAMLMetadataConfiguration(array(__DIR__ . "\..\Config\Yaml"), $isDevMode);
 $conn = array(
